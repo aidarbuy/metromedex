@@ -63,14 +63,14 @@ const onSetRemoteSuccess = pc =>
 const onSetSessionDescriptionError = error =>
 	trace('Failed to set session description: ' + error.toString());
 
-const gotRemoteStream = e => {
-	remoteVideo.srcObject = e.stream;
-	trace('pc2 received remote stream');
-	this.setState({
-		callButtonDisabled: true,
-		hangupButtonDisabled: false,
-	});
-}
+// const gotRemoteStream = e => {
+// 	remoteVideo.srcObject = e.stream;
+// 	trace('pc2 received remote stream');
+// 	this.setState({
+// 		callButtonDisabled: true,
+// 		hangupButtonDisabled: false,
+// 	});
+// }
 
 const onCreateAnswerSuccess = desc => {
 	trace('Answer from pc2:\n' + desc.sdp);
@@ -116,8 +116,9 @@ const BROWSER_MESSAGE = "Your browser does not support video tags";
 class WebRTC extends Component {
 	constructor(props, context) {
 		super(props, context);
-		this.gotStream = this.gotStream.bind(this);
+		this.gotRemoteStream = this.gotRemoteStream.bind(this);
 		this.start 	   = this.start.bind(this);
+		this.gotStream = this.gotStream.bind(this);
 		this.call 	   = this.call.bind(this);
 		this.hangup    = this.hangup.bind(this);
 		this.state = {
@@ -158,7 +159,7 @@ class WebRTC extends Component {
 				onCreateAnswerSuccess,
 				onCreateSessionDescriptionError
 			);
-			pc2.onaddstream = gotRemoteStream;
+			pc2.onaddstream = this.gotRemoteStream;
 		});
 		socket.on('answer', (desc) => {
 			trace('pc1 setRemoteDescription start');
@@ -168,7 +169,7 @@ class WebRTC extends Component {
 				},
 				onSetSessionDescriptionError
 			);
-			pc1.onaddstream = gotRemoteStream.bind(this);
+			pc1.onaddstream = this.gotRemoteStream;
 		});
 		socket.on('ice', (data) => {
 			pc = pc1 ? pc1 : pc2;
@@ -192,7 +193,6 @@ class WebRTC extends Component {
 		this.setState({callButtonDisabled: false});
 	}
 
-
 	start() {
 		trace('Requesting local stream');
 		this.setState({ startButtonDisabled:true });
@@ -204,6 +204,15 @@ class WebRTC extends Component {
 		.then(this.gotStream)
 		.catch(function(e) {
 			alert('getUserMedia() error: ' + e.name);
+		});
+	}
+
+	gotRemoteStream(e) {
+		remoteVideo.srcObject = e.stream;
+		trace('pc2 received remote stream');
+		this.setState({
+			callButtonDisabled: true,
+			hangupButtonDisabled: false,
 		});
 	}
 

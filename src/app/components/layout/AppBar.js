@@ -38,10 +38,12 @@ export default ({ isAppbarFixed, isThemeDark, language, setTheme, switchLanguage
 					onTouchTap = { () => { location.reload() } }
 				/>
 
+				{/*
 				<MenuItem 
 					primaryText = "Telemedicine"
 					containerElement = { <Link to="/telemed" /> }
 				/>
+				*/}
 
 				<MenuItem 
 					primaryText = { isThemeDark ? "Light interface" : "Dark interface" }

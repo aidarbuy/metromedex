@@ -117,8 +117,10 @@ export default ({ titleColor, textColor, colonColor, bgColorA, bgColorB, bgColor
 				<CardText color={textColor} style={styles.CardText}>
 					<p>Major Holidays Observed</p>
 					<Divider style={{background: textColor}} />
-					{/*<p>No Appointments Necessary</p>*/}
-					<p style={{fontWeight:500, fontSize:'110%'}}>We are closed July 4th</p>
+					{/*
+					<p>No Appointments Necessary</p>
+					*/}
+					<p style={{fontWeight:500, fontSize:'110%'}}>We will be closed Monday September 5 th for Labor Day</p>
 				</CardText>
 			</Card>
 		</div>

@@ -41,6 +41,37 @@ const config = {
         loaders: ['babel-loader'], // react-hot is like browser sync and babel loads jsx and es6-7
         exclude: [nodeModulesPath],
       },
+      // {
+        /* When you encounter images, compress them 
+        with image-webpack (wrapper around imagemin)
+        and then inline them as data64 URLs
+        */
+        // test: /.*\.(gif|png|jpe?g|svg)$/i,
+        // loaders: ['url', 'image-webpack'],
+      // },
+      {
+        // Minify PNG, JPEG, GIF and SVG images with imagemin
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          'file?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
+      },
+      // {
+        /* When you encounter SCSS files, 
+        parse them with node-sass, 
+        then pass autoprefixer on them
+        then return the results as a string of CSS
+        */
+        // test: /\.scss/,
+        // loaders: ['css', 'autoprefixer', 'sass'],
+      // }
+      {
+        // sass-loader
+        test: /\.scss$/,  //All .scss files
+        loaders: ['style', 'css', 'sass'], //react-hot is like browser sync and babel loads jsx and es6-7
+        exclude: [nodeModulesPath],
+      },
     ],
   },
 };

@@ -1,5 +1,5 @@
 {
-  "name": "Metromed Urgent Care",
+  "name": "Metromed-UC",
   "version": "0.15.0",
   "description": "Clinic webapp that uses Material-UI",
   "repository": {
@@ -39,6 +39,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "react-tap-event-plugin": "^1.0.0",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "webrtc-adapter": "^2.0.2"
   }
 }
