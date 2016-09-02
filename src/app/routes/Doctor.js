@@ -5,18 +5,18 @@ import Helmet from 'react-helmet';
 import { Link } from 'react-router';
 import React from 'react';
 
-function getDoctor(id) {
-	for (var i = doctors.length - 1; i >= 0; i--) {
-		if (doctors[i].id == id) {
-			return doctors[i];
-		}
-	}
-}
-
 class Doctor extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleTouchTap = this.handleTouchTap.bind(this);
+	}
+
+	getDoctor(id) {
+		for (var i = doctors.length - 1; i >= 0; i--) {
+			if (doctors[i].id == id) {
+				return doctors[i];
+			}
+		}
 	}
 
 	handleTouchTap() {
@@ -29,7 +29,7 @@ class Doctor extends React.Component {
 	render() {
 		const { primary1Color, primary3Color, textColor } = this.context.muiTheme.palette;
 		const { id } = this.props.params;
-		const doctor = getDoctor(id);
+		const doctor = this.getDoctor(id);
 
 		return (
 			<article>
@@ -55,9 +55,7 @@ class Doctor extends React.Component {
 					Doctor {doctor.firstname} {doctor.lastname}
 				</h3>
 
-				<img width="100%" 
-					src={require("../images/doctors/" + doctor.img.big)}
-				/>
+				<img width="100%" src={require('../images/doctors/' + doctor.img.big)} />
 
 				<div style={{margin:50, color:textColor}}>
 					{doctor.description.map((section, i) => (
