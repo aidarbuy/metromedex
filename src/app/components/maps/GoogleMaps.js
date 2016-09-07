@@ -14,9 +14,10 @@ const options = {
 
 const scrHeight = window.screen.height;
 // const height = scrHeight - (scrHeight / 3) - 170;
-const height = 307;
+const height = 373;
 
 export default React.createClass({
+
   componentDidMount() {
     GoogleMapsLoader.load((google) => {
       var map = new google.maps.Map(this.refs.map, options)
@@ -26,6 +27,7 @@ export default React.createClass({
         title: 'Metromed Urgent Care',
         animation: google.maps.Animation.DROP
       });
+      // console.debug(marker);
       // add the double-click event listener
       // google.maps.event.addListener(marker, 'click', function(event) {
       //   map = marker.getMap();
@@ -34,7 +36,7 @@ export default React.createClass({
       // })
     });
   },
-  // the smooth zoom function
+
   smoothZoom(map, max, cnt) {
     if (cnt >= max) {
         return;
@@ -47,6 +49,7 @@ export default React.createClass({
       setTimeout(function(){map.setZoom(cnt)}, 80); // 80ms is what I found to work well on my system -- it might not work well on all systems
     }
   },
+
   render() {
     return (
       <Paper style={{width:'100%', height}}>

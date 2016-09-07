@@ -24,7 +24,7 @@ class Location extends React.Component {
 		const loungeSrc = 'https://firebasestorage.googleapis.com/v0/b/metromeduc.appspot.com/o/images%2Finterior%2Flounge-1200x600.jpg?alt=media&token=7d9226dc-645f-47bf-801d-2a2ecf875294';
 		const text = "Clean and pleasant place";
 		const text2 = "We are right next to Wal-Mart.";
-		const title = "Our Contacts and Location";
+		const title = "Contacts and Location";
 
 		return (
 			<section>
@@ -67,7 +67,6 @@ class Location extends React.Component {
 								overlay={
 									<CardTitle
 										title = { text }
-										subtitle = { text2 }
 									/>
 								}
 							>
@@ -122,12 +121,19 @@ class Location extends React.Component {
 								}
 							/>
 
+							<CardMedia overlay={<CardTitle title = { text2 } />}>
+								<GMaps/>
+							</CardMedia>
+
+							{/*
 							<CardText><GMaps/></CardText>
+							*/}
 
 							<CardActions style={{textAlign:'center'}}>
 								<RaisedButton
 									href = { location }
 									label = "Open in Google Maps"
+									primary = { true }
 								/>
 							</CardActions>
 						</Card>

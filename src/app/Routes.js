@@ -29,6 +29,10 @@ import Visa      from './routes/Visa';
  * The react router will search for a route named 'paper' 
  * and will recursively render its handler and its parent 
  * handler like so: Paper > Components > Master
+
+    <Route path="/about"        getComponent={
+        (location, cb) => { require('./routes/About')(location, cb) }
+    }/>
  */
 
 module.exports = (

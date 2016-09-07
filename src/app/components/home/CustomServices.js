@@ -6,6 +6,7 @@ import IconHeart from '../icons/IconHeart';
 import IconHistory from '../icons/IconHistory';
 import IconImages from '../icons/IconImages';
 import RaisedButton from 'material-ui/RaisedButton';
+import Link from 'react-router';
 import React from 'react';
 
 const styles = {
@@ -36,7 +37,7 @@ const styles = {
 	},
 };
 
-function getIconStyle(iconColor, hoverColor) {
+const getIconStyle = (iconColor, hoverColor) => {
 	return {
 		display: 'inline-block',
 		color: iconColor,
@@ -46,27 +47,26 @@ function getIconStyle(iconColor, hoverColor) {
 	};
 }
 
-function getIcon(i, iconColor, hoverColor) {
+const getIcon = (i, iconColor, hoverColor) => {
 	switch (i) {
-	case 0: return <IconHeart styles={getIconStyle(iconColor, hoverColor)} />;
-	case 1: return <IconAidKit styles={getIconStyle(iconColor, hoverColor)} />;
-	case 2: return <IconImages styles={getIconStyle(iconColor, hoverColor)} />;
-	case 3: return <IconHistory styles={getIconStyle(iconColor, hoverColor)} />;
+		case 0: return <IconHeart styles={getIconStyle(iconColor, hoverColor)} />;
+		case 1: return <IconAidKit styles={getIconStyle(iconColor, hoverColor)} />;
+		case 2: return <IconImages styles={getIconStyle(iconColor, hoverColor)} />;
+		case 3: return <IconHistory styles={getIconStyle(iconColor, hoverColor)} />;
 	}
 }
 
 export default ({ iconColor, hoverColor, titleColor }) => (
-	<div className="flex-container" style={{
-		marginTop: 0,
-		marginBottom: 0,
-	}}>
+	<div className="flex-container" style={{ marginTop:0, marginBottom:0 }}>
 		{dataCustomServices.map((item, i) => (
 			<div className="custom-services-item" key={i}>
 				<Card style={styles.Card}>
-					<CardMedia>{getIcon(i, iconColor, hoverColor)}</CardMedia>
+					<CardMedia>
+						{getIcon(i, iconColor, hoverColor)}
+					</CardMedia>
 
 					<CardTitle
-						style 		 = { styles.CardTitle }
+						style 	   = { styles.CardTitle }
 						title      = { item.name }
 						titleColor = { titleColor }
 					/>

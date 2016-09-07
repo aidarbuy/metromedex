@@ -116,11 +116,11 @@ const BROWSER_MESSAGE = "Your browser does not support video tags";
 class WebRTC extends Component {
 	constructor(props, context) {
 		super(props, context);
+		this.call = this.call.bind(this);
 		this.gotRemoteStream = this.gotRemoteStream.bind(this);
-		this.start 	   = this.start.bind(this);
 		this.gotStream = this.gotStream.bind(this);
-		this.call 	   = this.call.bind(this);
-		this.hangup    = this.hangup.bind(this);
+		this.hangup = this.hangup.bind(this);
+		this.start = this.start.bind(this);
 		this.state = {
 			callButtonDisabled: true,
 			hangupButtonDisabled: true,
@@ -186,36 +186,6 @@ class WebRTC extends Component {
 		});
 	}
 
-	gotStream(stream) {
-		trace('Received local stream');
-		localVideo.srcObject = stream;
-		localStream = stream;
-		this.setState({callButtonDisabled: false});
-	}
-
-	start() {
-		trace('Requesting local stream');
-		this.setState({ startButtonDisabled:true });
-		var self = this;
-		navigator.mediaDevices.getUserMedia({
-			audio: true,
-			video: { width:1280 }
-		})
-		.then(this.gotStream)
-		.catch(function(e) {
-			alert('getUserMedia() error: ' + e.name);
-		});
-	}
-
-	gotRemoteStream(e) {
-		remoteVideo.srcObject = e.stream;
-		trace('pc2 received remote stream');
-		this.setState({
-			callButtonDisabled: true,
-			hangupButtonDisabled: false,
-		});
-	}
-
 	call() {
 		this.setState({
 			callButtonDisabled: true,
@@ -253,6 +223,22 @@ class WebRTC extends Component {
 		);
 	}
 
+	gotRemoteStream(e) {
+		remoteVideo.srcObject = e.stream;
+		trace('pc2 received remote stream');
+		this.setState({
+			callButtonDisabled: true,
+			hangupButtonDisabled: false,
+		});
+	}
+
+	gotStream(stream) {
+		trace('Received local stream');
+		localVideo.srcObject = stream;
+		localStream = stream;
+		this.setState({callButtonDisabled: false});
+	}
+
 	hangup() {
 		trace('Ending call');
 		pc = pc1 ? pc1 : pc2;
@@ -261,6 +247,20 @@ class WebRTC extends Component {
 		this.setState({
 			hangupButtonDisabled: true,
 			callButtonDisabled: false,
+		});
+	}
+
+	start() {
+		trace('Requesting local stream');
+		this.setState({ startButtonDisabled:true });
+		var self = this;
+		navigator.mediaDevices.getUserMedia({
+			audio: true,
+			video: { width:1280 }
+		})
+		.then(this.gotStream)
+		.catch(function(e) {
+			alert('getUserMedia() error: ' + e.name);
 		});
 	}
 

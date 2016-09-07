@@ -1,7 +1,6 @@
 import Greetings from '../components/about/Greetings';
 import Helmet from 'react-helmet';
 import Metromed from '../components/about/Metromed';
-// import Paper from 'material-ui/Paper';
 import React from 'react';
 
 export default React.createClass({
@@ -11,7 +10,7 @@ export default React.createClass({
 
 	render() {
 		const {
-			accent1Color,
+			accent1Color, accent2Color,
 			borderColor,
 			primary1Color, primary2Color,
 			textColor,
@@ -33,9 +32,9 @@ export default React.createClass({
 
 					<div className="flex-item-half">
 						<Metromed
-							accentColor 		 = { accent1Color }
+							accentColor 		 = { accent2Color }
 							imgSubtitleColor = { borderColor }
-							primaryColor 		 = { primary1Color }
+							primaryColor 		 = { primary2Color }
 							textColor 			 = { textColor }
 						/>
 					</div>

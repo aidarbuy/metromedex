@@ -83,7 +83,7 @@ class Main extends React.Component {
 				{/* Four cards with big icons */}
 				<CustomServices
 					hoverColor = { accent1Color }
-					iconColor  = { primary1Color }
+					iconColor  = { primary2Color }
 					titleColor = { primary2Color }
 				/>
 

@@ -1,6 +1,6 @@
 import dataGallery from '../data/gallery';
 import Helmet from 'react-helmet';
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class Gallery extends Component {
 	constructor(props) {
@@ -30,11 +30,13 @@ class Gallery extends Component {
 	}
 
 	render() {
+		const { primary3Color } = this.context.muiTheme.palette;
+
 		return (
 			<section>
 				<Helmet title="Photo gallery"/>
 
-				<h3>Photo Gallery</h3>
+				<h3 style={{color:primary3Color}}>Photo Gallery</h3>
 
 				<div id="nanoGallery">
 					{dataGallery.map((photo, index) => (
@@ -51,5 +53,9 @@ class Gallery extends Component {
 		);
 	}
 }
+
+Gallery.contextTypes = {
+	muiTheme: PropTypes.object,
+};
 
 export default Gallery;

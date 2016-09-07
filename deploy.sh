@@ -16,7 +16,7 @@ firebase deploy
 echo $STRING
 echo "..."
 
-echo "Starting localhost:"
-npm start
-echo $STRING
-echo "..."
+# echo "Starting localhost:"
+# npm start
+# echo $STRING
+# echo "..."

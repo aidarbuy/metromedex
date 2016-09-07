@@ -15,7 +15,7 @@ export default ({ isDrawerOpen, setRoute, toggleDrawer, menuItems, menuItemColor
 	<Drawer
 		docked = { false }
 		onRequestChange = { toggleDrawer }
-		open = { isDrawerOpen }
+		open = { false || isDrawerOpen }
 		openSecondary = { false }
 		width = { 200 }
 	>
@@ -38,8 +38,9 @@ export default ({ isDrawerOpen, setRoute, toggleDrawer, menuItems, menuItemColor
 				<CardTitle
 					title = {
 						<a href='tel:(703)-687-4158' style={{
-							color: phoneColor,
+							color: emailColor,
 							textDecoration: 'none',
+							fontSize: '90%',
 						}}>
 							<span>(703)-687-4158</span>
 						</a>
@@ -59,8 +60,10 @@ export default ({ isDrawerOpen, setRoute, toggleDrawer, menuItems, menuItemColor
 			</CardMedia>
 		</Card>
 
-		<Subheader>Site navigation</Subheader>
+		{/*
+		<Subheader>Site menu</Subheader>
 		<Divider/>
+		*/}
 
 		{menuItems.map((item, i) => (
 			<MenuItem key={i}

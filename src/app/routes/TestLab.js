@@ -1,58 +1,54 @@
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
 import Helmet from 'react-helmet';
-import i18next from 'i18next';
 import { default as React, Component, PropTypes } from 'react';
 
 class TestLab extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			hw: '',
+			fizzbuzz: [],
 		};
 	}
 
-	componentWillMount() {
-		i18next.init({
-			lng: 'es',
-			// "lng": "de-DE",
-			debug: true,
-			fallbackLng: 'en',
-			backend: {
-				loadPath: 'locales/{{lng}}/{{ns}}.json',
-			},
-			resources: {
-				en: {
-					translation: {
-						key: "hello world",
-					}
-				},
-				es: {
-					translation: {
-						key: "Holla!",
-					}
-				},
+	fizzBuzz() {
+		var arr = [];
+		for (var i = 1; i <= 100; i++) {
+			if (i % 3 == 0 && i % 5 == 0) {
+				arr.push("Fizz-Buzz");
+			} else if (i % 3 == 0) {
+				arr.push("fizz");
+			} else if (i % 5 == 0) {
+				arr.push("buzz");
+			} else {
+				arr.push(i);
 			}
-		}, (err, t) => {
-		  // initialized and ready to go!
-		  const hw = i18next.t('key'); // hw = 'hello world'
-		  this.setState({hw});
+		}
+		this.setState({
+			fizzbuzz: arr,
 		});
 	}
 
-	render() {
-		const { name, unreadCount } = this.state;
+	componentDidMount() {
+		// this.fizzBuzz();
+	}
 
+	render() {
+		const { palette } = this.context.muiTheme;
 		return (
 			<section>
 				<Helmet title="Metromed Test Lab" />
 
-				<h3>Test Lab</h3>
+				<h3>FizzBuzz</h3>
 
-				<h4>{this.state.hw}</h4>
+				{Object.keys(palette).map((item, i) => (
+					<div key={i}>{item}</div>
+				))}
 			</section>
 		);
 	}
 }
+
+TestLab.contextTypes = {
+	muiTheme: PropTypes.object,
+};
 
 export default TestLab;

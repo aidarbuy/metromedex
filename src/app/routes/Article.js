@@ -40,7 +40,7 @@ class Article extends React.Component {
 
 	render() {
 		const {
-			canvasColor, accent2Color, textColor, borderColor,
+			canvasColor, secondaryTextColor, textColor, borderColor,
 		} = this.context.muiTheme.palette;
 
 		// const { title, date, href, text } = this.state;
@@ -60,10 +60,10 @@ class Article extends React.Component {
 				<div style={{ textAlign:'left' }}>
 					<FlatButton
 						containerElement = { <Link to="/articles" /> }
-						icon 			 = { <ArrowBack /> }
-						label 			 = { "All Articles" }
-						labelPosition 	 = { "after" }
-						secondary 		 = { true }
+						icon 			 		= { <ArrowBack /> }
+						label 			 	= { "All Articles" }
+						labelPosition = { "after" }
+						secondary 		= { true }
 					/>
 				</div>
 
@@ -79,7 +79,8 @@ class Article extends React.Component {
 							<CardTitle 
 								title 	   = { this.state.title } 
 								subtitle   = { this.state.date } 
-								titleStyle = {{ color: accent2Color }}
+								titleStyle = {{ color: secondaryTextColor }}
+								subtitleStyle = {{ color: secondaryTextColor }}
 							/>
 						}>
 							{articleImage}
