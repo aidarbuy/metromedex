@@ -1,13 +1,9 @@
-import Greetings from '../components/about/Greetings';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
+import Greetings from '../components/about/Greetings';
 import Metromed from '../components/about/Metromed';
-import React from 'react';
 
-export default React.createClass({
-	contextTypes: {
-		muiTheme: React.PropTypes.object,
-	},
-
+class About extends Component {
 	render() {
 		const {
 			accent1Color, accent2Color,
@@ -42,4 +38,10 @@ export default React.createClass({
 			</section>
 		);
 	}
-});
+}
+
+About.contextTypes = {
+	muiTheme: React.PropTypes.object,
+};
+
+export default About;

@@ -1,19 +1,23 @@
-import AppBar from './components/layout/AppBar';
-import AppTabs from './components/layout/AppTabs';
-import Drawer from'./components/layout/Drawer';
-import { fade } from 'material-ui/utils/colorManipulator';
-import Footer from './components/layout/Footer';
-import { getInitIndex } from './utils/navigation';
-import { getMenuItems } from './data/menu-items';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { getShadowHexColor } from './utils/colors';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React from 'react';
+import { fade } from 'material-ui/utils/colorManipulator';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+
+import { getShadowHexColor } from '../utils/colors';
+import { getInitIndex } from '../utils/navigation';
+import { getMenuItems } from '../data/menu-items';
+
+import AppBar from './layout/AppBar';
+import AppTabs from './layout/AppTabs';
+import Home from '../routes/Home';
+import Drawer from'./layout/Drawer';
+import Footer from './layout/Footer';
+
 // require('./styles/skeleton.scss');
-require('./styles/layout.scss');
-require('./styles/typography.scss');
+require('../styles/layout.scss');
+require('../styles/typography.scss');
 
 import {
 	blue50, blue100, blue200, blue500, blue700, blue800, blue900,
@@ -30,7 +34,7 @@ import {
 } from 'material-ui/styles/colors';
 
 
-// Dark Palette
+// Dark palette
 const defaultColor = grey700;
 darkBaseTheme.palette.primary1Color = blue900;
 darkBaseTheme.palette.primary2Color = blue800;
@@ -52,15 +56,19 @@ darkBaseTheme.palette.clockCircleColor = yellow500;
 darkBaseTheme.palette.shadowColor = grey600;
 
 
+// Light palette
 lightBaseTheme.palette.primary1Color = blue500;
 lightBaseTheme.palette.primary2Color = blue700;
-// lightBaseTheme.palette.primary3Color = 
+lightBaseTheme.palette.primary3Color = blue900;
+
 // lightBaseTheme.palette.accent1Color = 
 // lightBaseTheme.palette.accent2Color = 
 // lightBaseTheme.palette.accent3Color = 
+
 // lightBaseTheme.palette.textColor = 
 // lightBaseTheme.palette.secondaryTextColor = 
-// lightBaseTheme.palette.alternateTextColor = 
+lightBaseTheme.palette.alternateTextColor = grey50;
+
 // lightBaseTheme.palette.canvasColor = 
 // lightBaseTheme.palette.borderColor = 
 // lightBaseTheme.palette.disabledColor = 
@@ -68,15 +76,17 @@ lightBaseTheme.palette.primary2Color = blue700;
 // lightBaseTheme.palette.clockCircleColor = 
 // lightBaseTheme.palette.shadowColor = 
 
+
 class Layout extends React.Component {
+
 	constructor(props) {
 		super(props);
 		this.handleActive 	   = this.handleActive.bind(this);
 		this.pushToRouter 	   = this.pushToRouter.bind(this);
 		this.toggleAppbarFixed = this.toggleAppbarFixed.bind(this);
-		this.setRoute 		   = this.setRoute.bind(this);
+		this.setRoute 		   	 = this.setRoute.bind(this);
 		this.setMainState 	   = this.setMainState.bind(this);
-		this.setTheme 		   = this.setTheme.bind(this);
+		this.setTheme 		   	 = this.setTheme.bind(this);
 		this.switchLanguage    = this.switchLanguage.bind(this);
 		this.toggleDrawer 	   = this.toggleDrawer.bind(this);
 		this.state = {
@@ -180,16 +190,18 @@ class Layout extends React.Component {
 		} = muiTheme.palette;
 
 		return (
-			<MuiThemeProvider muiTheme = { muiTheme }>
-				<div className = "layout">
+			<MuiThemeProvider muiTheme={muiTheme}>
+				<div className="layout">
 
 					{/* Main Toolbar, can open AppLeftNav */}
 					<AppBar
-						isAppbarFixed  	  = { isAppbarFixed }
-						isThemeDark 	  = { isThemeDark }
-						language 		  = { language }
-						setTheme 		  = { this.setTheme }
+						isAppbarFixed={isAppbarFixed}
+						isThemeDark={isThemeDark}
+						language={language}
+						pushToRouter 			= { this.pushToRouter }
+						setTheme 		  		= { this.setTheme }
 						switchLanguage 	  = { this.switchLanguage }
+						titleColor 			  = { alternateTextColor }
 						toggleAppbarFixed = { this.toggleAppbarFixed }
 						toggleDrawer   	  = { this.toggleDrawer }
 						toggleTheme    	  = { this.toggleTheme }
@@ -212,7 +224,7 @@ class Layout extends React.Component {
 						emailColor 	  = { isThemeDark ? textColor : alternateTextColor }
 						isDrawerOpen  = { this.state.isDrawerOpen }
 						menuItems 	  = { getMenuItems(primary2Color) }
-						menuItemColor = { primary3Color }
+						menuItemColor = { primary2Color }
 						phoneColor 	  = { accent2Color }
 						setRoute   	  = { this.setRoute }
 						toggleDrawer  = { this.toggleDrawer }

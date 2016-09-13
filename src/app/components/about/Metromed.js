@@ -1,9 +1,9 @@
+import React from 'react';
 import { Card, CardActions, CardHeader, CardMedia, CardText, CardTitle } from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
-import FlatButton from 'material-ui/FlatButton';
+// import FlatButton from 'material-ui/FlatButton';
 import List from 'material-ui/List';
 import ListItem from 'material-ui/List/ListItem';
-import React from 'react';
 
 const items = [
   ["Experienced emergency room docs and personnel"],

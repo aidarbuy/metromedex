@@ -1,6 +1,5 @@
-import { Card, CardActions, CardHeader, CardMedia, CardText, CardTitle } from 'material-ui/Card';
+import { Card, CardText, CardTitle } from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
-import FlatButton from 'material-ui/FlatButton';
 import React from 'react';
 import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table';
 require('../../styles/bluebar.scss');
@@ -117,12 +116,10 @@ export default ({ titleColor, textColor, colonColor, bgColorA, bgColorB, bgColor
 				<CardText color={textColor} style={styles.CardText}>
 					<p>Major Holidays Observed</p>
 					<Divider style={{background: textColor}} />
-					{/*
 					<p>No Appointments Necessary</p>
-					*/}
-					<p style={{fontWeight:500, fontSize:'110%'}}>We will be closed Monday September 5 th for Labor Day</p>
 				</CardText>
 			</Card>
 		</div>
 	</div>
 );
+// <p style={{fontWeight:500, fontSize:'110%'}}>We will be closed Monday September 5 th for Labor Day</p>

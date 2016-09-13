@@ -1,18 +1,39 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html class="no-js" lang="en">
 <head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
+  <title>Metromed Urgent Care</title>
+  <meta name="description" content="Metromed Urgent Care of Leesburg">
+  <meta name="author" content="MetromedUC">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Use minimum-scale=1 to enable GPU rasterization -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1"> -->
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link rel="stylesheet" href="/css/normalize.css"> -->
+  <!-- <link rel="stylesheet" href="/css/skeleton.css"> -->
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/favicon.ico">
 
   <meta name="defaultLanguage" content="en-US">
   <meta name="availableLanguages" content="en-US, es">
   <!-- <link rel="localization" href="locales/myApp.{locale}.ftl"> -->
   <!-- <script defer src="dist/bundle/web/l20n.js"></script> -->
 
-  <title>Metromed Urgent Care</title>
-
-  <meta name="description" content="Metromed Urgent Care of Leesburg">
   <meta itemprop="description" content="Metromed Urgent Care of Leesburg">
   <!-- <meta itemprop="image" content="../../../images/webrtc-icon-192x192.png"> -->
   <meta itemprop="name" content="Metromed Urgent Care of Leesburg">
@@ -21,15 +42,13 @@
 
   <body bgcolor="#ffffff">
 
-  <!-- Use minimum-scale=1 to enable GPU rasterization -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
-
   <!-- <link type="text/css" rel="stylesheet" href="main.css"> -->
   <link type="text/css" rel="stylesheet" href="/layerslider/css/layerslider.css">
   <link type="text/css" rel="stylesheet" href="/nanogallery/css/themes/light/nanogallery_light.min.css">
   <link type="text/css" rel="stylesheet" href="/nanogallery/css/themes/light/nanogallery_light.woff.min.css">
 
-  <!-- Firebase -->
+  <!-- Firebase
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <!-- <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase-app.js"></script> -->
   <!-- <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase-auth.js"></script> -->
   <!-- <script src="https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.js"></script> -->
@@ -57,9 +76,10 @@
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
   <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-orange.min.css"> -->
   <!-- <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script> -->
-</head>
 
+</head>
 <body>
+
   <div id="app"></div>
 
   <!-- This script adds the Roboto font to our project. For more detail go to this site:  http://www.google.com/fonts#UsePlace:use/Collection:Roboto:400,300,500 -->
@@ -91,8 +111,11 @@
   <!-- Nano Gallery -->
   <script type="text/javascript" src="/nanogallery/jquery.nanogallery.min.js" async></script>
 
+  <!-- React App -->
+  <script src="/app.js"></script>
+
   <!-- Shim for WebRTC   -->
-  <script src="/js/adapter-latest.js" async></script>
+  <!-- <script src="/js/adapter-latest.js" async></script> -->
   <!-- <script src="https://webrtc.github.com/adapter/adapter-latest.js"></script> -->
 
   <!-- Utility scripts -->
@@ -101,19 +124,15 @@
   <!-- Vendors -->
   <!-- <script src="/vendor.bundle.js"></script> -->
 
-  <!-- React App -->
-  <script src="/app.js"></script>
-
   <!-- Google Analytics -->
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-67176288-1', 'auto');
-    ga('require', 'linkid');
-    ga('send', 'pageview');
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+   ga('create', 'UA-67176288-1', 'auto');
+   ga('require', 'linkid');
+   ga('send', 'pageview');
   </script>
 </body>
-
 </html>

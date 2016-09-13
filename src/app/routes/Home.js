@@ -2,7 +2,6 @@ import Advertising from '../components/home/Advertising';
 import BlueBar from '../components/home/BlueBar';
 import CallToAction from '../components/home/CallToAction';
 import CustomServices from '../components/home/CustomServices';
-import Dialog from 'material-ui/Dialog';
 import Helmet from 'react-helmet';
 import LatestArticles from '../components/home/LatestArticles';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -41,7 +40,7 @@ class Main extends React.Component {
 	}
 
 	render() {
-		const { 
+		const {
 			accent1Color, accent2Color, alternateTextColor,
 			canvasColor, clockCycleColor,
 			primary1Color, primary2Color, primary3Color,

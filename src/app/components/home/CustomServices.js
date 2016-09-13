@@ -6,7 +6,7 @@ import IconHeart from '../icons/IconHeart';
 import IconHistory from '../icons/IconHistory';
 import IconImages from '../icons/IconImages';
 import RaisedButton from 'material-ui/RaisedButton';
-import Link from 'react-router';
+import { Link } from 'react-router';
 import React from 'react';
 
 const styles = {
@@ -78,12 +78,12 @@ export default ({ iconColor, hoverColor, titleColor }) => (
 					</CardText>
 
 					<CardActions>
-						<RaisedButton 
-							href       = { item.href }
-							label      = { item.button }
-							primary    = { false }
-							secondary  = { true }
-						/>
+            <RaisedButton
+              containerElement={<Link to={item.href}/>}
+              label      = { item.button }
+              primary    = { false }
+              secondary  = { true }
+            />
 					</CardActions>
 				</Card>
 			</div>

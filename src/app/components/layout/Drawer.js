@@ -12,23 +12,20 @@ import Toggle from 'material-ui/Toggle';
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 
 export default ({ isDrawerOpen, setRoute, toggleDrawer, menuItems, menuItemColor, phoneColor, emailColor }) => (
-	<Drawer
-		docked = { false }
-		onRequestChange = { toggleDrawer }
-		open = { false || isDrawerOpen }
-		openSecondary = { false }
-		width = { 200 }
-	>
+	<Drawer docked={false}
+		onRequestChange={toggleDrawer}
+		open={false || isDrawerOpen}
+		openSecondary={false}
+		width={200}>
+
 		<AppBar
-			title = {
-				<span style={{cursor:'pointer'}}>MetromedUC</span>
-			}
-			titleStyle = {{ fontSize: 20 }}
-			onTitleTouchTap = { toggleDrawer }
-			showMenuIconButton = { false }
-			iconElementRight = {
-				<IconButton onTouchTap = { toggleDrawer }>
-					<ArrowBackward />
+			title={<span style={{cursor:'pointer'}}>MetromedUC</span>}
+			titleStyle={{ fontSize: 20 }}
+			onTitleTouchTap={toggleDrawer}
+			showMenuIconButton={false}
+			iconElementRight={
+				<IconButton onTouchTap={toggleDrawer}>
+					<ArrowBackward/>
 				</IconButton>
 			}
 		/>
@@ -36,23 +33,19 @@ export default ({ isDrawerOpen, setRoute, toggleDrawer, menuItems, menuItemColor
 		<Card style={{maxWidth:200}}>
 			<CardMedia overlayContentStyle={{ bottom: -1 }} overlay={
 				<CardTitle
-					title = {
+					title={
 						<a href='tel:(703)-687-4158' style={{
 							color: emailColor,
 							textDecoration: 'none',
 							fontSize: '90%',
-						}}>
-							<span>(703)-687-4158</span>
-						</a>
+						}}><span>(703)-687-4158</span></a>
 					}
 
-					subtitle = {
+					subtitle={
 						<a href='mailto:info@metromeduc.com' style={{
 							color: emailColor,
 							textDecoration: 'none',
-						}}>
-							<span>info@metromeduc.com</span>
-						</a>
+						}}><span>info@metromeduc.com</span></a>
 					}
 				/>
 			}>
@@ -60,19 +53,17 @@ export default ({ isDrawerOpen, setRoute, toggleDrawer, menuItems, menuItemColor
 			</CardMedia>
 		</Card>
 
-		{/*
-		<Subheader>Site menu</Subheader>
-		<Divider/>
-		*/}
+		{/*<Subheader>Site menu</Subheader>
+		<Divider/>*/}
 
 		{menuItems.map((item, i) => (
 			<MenuItem key={i}
-				innerDivStyle = {{ paddingLeft:60 }}
-				leftIcon 			= { item.icon }
-				onTouchTap 		= { () => { setRoute(item.route) } }
-				primaryText 	= { item.name }
-				style = {{ color: menuItemColor }}
-				value = { item.route }
+				innerDivStyle={{ paddingLeft: 55 }}
+				leftIcon={item.icon}
+				onTouchTap={()=> { setRoute(item.route) }}
+				primaryText={item.name}
+				style={{ color: menuItemColor }}
+				value={item.route}
 			/>
 		))}
 	</Drawer>

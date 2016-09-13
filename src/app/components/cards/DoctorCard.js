@@ -28,23 +28,23 @@ export default React.createClass({
 				</CardMedia>
 
 				<CardTitle
-					title    = {doctor.speciality}
-					subtitle = {doctor.title} 
+					title={doctor.speciality}
+					subtitle={doctor.title}
 				/>
 
 				<CardText style={{ fontSize:16 }}>
 					{doctor.description[0]}
 				</CardText>
 
-				<CardActions style={{textAlign:'right'}}>
+				<CardActions style={{ textAlign:'right' }}>
 					<RaisedButton
-						containerElement = { <Link to={route} /> }
-						icon          = { <ArrowForward /> }
-						label         = "Read more"
-						labelPosition = "before"
-						onTouchTap    = { (route) => { this.handleTouchTap(route) } }
-						secondary     = { true }
-						style         = {{ marginBottom: 20 }}
+						containerElement={<Link to={route}/>}
+						icon={<ArrowForward/>}
+						label="Read more"
+						labelPosition="before"
+						onTouchTap={(route)=> { this.handleTouchTap(route) }}
+						secondary={true}
+						style={{ marginBottom: 20 }}
 					/>
 				</CardActions>
 			</Card>

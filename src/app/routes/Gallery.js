@@ -2,6 +2,10 @@ import dataGallery from '../data/gallery';
 import Helmet from 'react-helmet';
 import React, { Component, PropTypes } from 'react';
 
+// require('./TweenMax.min.js');
+// require('./jquery.js');
+// require("./nanogallery/jquery.nanogallery.min.js");
+
 class Gallery extends Component {
 	constructor(props) {
 		super(props);

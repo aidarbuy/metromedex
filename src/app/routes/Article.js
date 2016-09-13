@@ -40,7 +40,7 @@ class Article extends React.Component {
 
 	render() {
 		const {
-			canvasColor, secondaryTextColor, textColor, borderColor,
+			canvasColor, secondaryTextColor, alternateTextColor, borderColor,
 		} = this.context.muiTheme.palette;
 
 		// const { title, date, href, text } = this.state;
@@ -79,14 +79,14 @@ class Article extends React.Component {
 							<CardTitle 
 								title 	   = { this.state.title } 
 								subtitle   = { this.state.date } 
-								titleStyle = {{ color: secondaryTextColor }}
-								subtitleStyle = {{ color: secondaryTextColor }}
+								titleStyle = {{ color: alternateTextColor }}
+								subtitleStyle = {{ color: alternateTextColor }}
 							/>
 						}>
 							{articleImage}
 						</CardMedia>
 
-						<CardText style={{fontSize: 16, padding: '5%',}}>
+						<CardText style={{fontSize: '18 !important', padding: '5%',}}>
 							{this.state.text}
 						</CardText>
 					</Card>

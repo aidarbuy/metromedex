@@ -26,9 +26,9 @@ class Doctors extends React.Component {
 					{dataDoctors.map((doctor, i) => (
 						<div key={doctor.id} className="doctors-item">
 							<DoctorCard
-								color  = { primary1Color }
-								dispatchAction = { this.dispatchAction }
-								doctor = { doctor }
+								color={primary1Color}
+								dispatchAction={this.dispatchAction}
+								doctor={doctor}
 							/>
 						</div>
 					))}

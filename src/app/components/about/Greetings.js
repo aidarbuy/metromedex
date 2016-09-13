@@ -3,7 +3,7 @@ import Divider from 'material-ui/Divider';
 import FlatButton  from 'material-ui/FlatButton';
 import List from 'material-ui/List';
 import ListItem from 'material-ui/List/ListItem';
-import ListItemDivider from '../../components/ui/ListItemDivider';
+// import ListItemDivider from './ui/ListItemDivider';
 import { Table, TableHeaderColumn, TableRow, TableHeader, TableRowColumn, TableBody } from 'material-ui/Table';
 import React from 'react';
 

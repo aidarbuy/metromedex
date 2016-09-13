@@ -42,23 +42,23 @@ const styles = {
 	},
 };
 
-styles['slideA']          = {we: styles.getStyles()}
-styles.slideA['care']     = styles.getStyles()
-styles.slideA['about']    = styles.getStyles()
-styles.slideA['every']    = styles.getStyles()
-styles.slideA['patient']  = styles.getStyles()
+styles['slideA']          = {we: styles.getStyles()};
+styles.slideA['care']     = styles.getStyles();
+styles.slideA['about']    = styles.getStyles();
+styles.slideA['every']    = styles.getStyles();
+styles.slideA['patient']  = styles.getStyles();
 
-styles.slideA.we.left       = '10%'
-styles.slideA.care.left     = '24%'
-styles.slideA.about.left    = '43%'
-styles.slideA.every.left    = '64%'
-styles.slideA.patient.left  = '85%'
+styles.slideA.we.left       = '10%';
+styles.slideA.care.left     = '24%';
+styles.slideA.about.left    = '43%';
+styles.slideA.every.left    = '64%';
+styles.slideA.patient.left  = '85%';
 
-styles.slideA.we.color      = 'rgb(86, 204, 225)'
-styles.slideA.care.color    = 'rgb(86, 204, 225)'
-styles.slideA.about.color   = 'rgb(44, 191, 217)'
-styles.slideA.every.color   = 'rgb(44, 166, 217)'
-styles.slideA.patient.color = 'rgb(27, 144, 218)'
+styles.slideA.we.color      = 'rgb(86, 204, 225)';
+styles.slideA.care.color    = 'rgb(86, 204, 225)';
+styles.slideA.about.color   = 'rgb(44, 191, 217)';
+styles.slideA.every.color   = 'rgb(44, 166, 217)';
+styles.slideA.patient.color = 'rgb(27, 144, 218)';
 
 styles.slideA['spectrum'] = {
 	top: '88%', 
@@ -68,7 +68,7 @@ styles.slideA['spectrum'] = {
 	fontSize: 55, 
 	fontWeight: 300, 
 	color: 'rgb(27, 144, 218)',
-}
+};
 
 styles.slideA['hours'] = {
 	top: '89%', 
@@ -78,7 +78,7 @@ styles.slideA['hours'] = {
 	fontSize: 55, 
 	fontWeight: 300, 
 	color: 'rgb(27, 144, 218)',
-}
+};
 
 styles['slideB'] = {
 	fullSpectrum: {
@@ -151,7 +151,7 @@ styles['slideB'] = {
 		whiteSpace: 'nowrap'
 	},
 	pluses: []
-}
+};
 
 for (var i = 0; i <= 5; i++) {
 	var plus = styles.getPlus()
@@ -168,11 +168,13 @@ for (var i = 0; i <= 5; i++) {
 
 // for (var i = 0; i <= 5; i++) console.log(i + ": " + styles.slideB.pluses[i].top)
 
+{/*<img className="ls-layer" alt="Slide background blur" style={styles.bgBlur} src='https://firebasestorage.googleapis.com/v0/b/metromeduc.appspot.com/o/images%2Flayerslider%2Fimage-1-blur2.jpg?alt=media&token=f1014327-8c89-4cea-a722-d3b07aa016b4' data-ls="offsetxin:0; delayin:0000; durationin:2000" />*/}
+
 export default () => (
 	<div id="layerslider" style={styles.main}>
 		<div className="ls-slide" data-ls="slidedelay:23000; transition2d: 15-18, 59-61, 90, 91, 30-32, 69-72, 40-43, 92, 96, 97, 75-79, 81, 82, 86, 87-89, 93-95, 111, 103-105, 109, 112">
 			<img className="ls-bg" alt="Slide background" src={image1} />
-			<img className="ls-layer" alt="Slide background blur" style={styles.bgBlur} src='https://firebasestorage.googleapis.com/v0/b/metromeduc.appspot.com/o/images%2Flayerslider%2Fimage-1-blur2.jpg?alt=media&token=f1014327-8c89-4cea-a722-d3b07aa016b4' data-ls="offsetxin:0; delayin:0000; durationin:2000" />
+			<img className="ls-layer" alt="Slide background blur" style={styles.bgBlur} src={image1Blur} data-ls="offsetxin:0; delayin:0000; durationin:2000" />
 			<h2 className="ls-l" style={styles.slideA.we}       data-ls="delayin: 0500; offsetxin:0; offsetyin:10; durationin:2000; offsetxout:0; offsetyout:0; durationout:2000; showuntil:4000;">WE</h2>
 			<h2 className="ls-l" style={styles.slideA.care}     data-ls="delayin: 0900; offsetxin:0; offsetyin:10; durationin:2000; offsetxout:0; offsetxout:0; durationout:2000; showuntil:4000;">CARE</h2>
 			<h2 className="ls-l" style={styles.slideA.about}    data-ls="delayin: 1300; offsetxin:0; offsetyin:10; durationin:2000; offsetxout:0; offsetxout:0; durationout:2000; showuntil:4000;">ABOUT</h2>
@@ -258,21 +260,21 @@ export default () => (
 			}}>Care</h4>
 
 			<h5 className="ls-l"
-				data-ls="
-					offsetxin: -100; 
-					offsetxout: 0; 
-					offsetyin: 0; 
-					offsetyout: bottom; 
-					durationin: 2500; 
-					delayin: 2000; 
-					skewxin: 60;
-				"
-				style={{
-					top: 450, 
-					left: 125, 
-					fontSize: 30,
-					color: '#FF3D00' 
-			}}>When medical treatment is fun :)</h5>
+
+				data-ls="offsetxin: -100;
+						 offsetxout: 0;
+						 offsetyin: 0;
+						 offsetyout: bottom;
+						 durationin: 2500;
+						 delayin: 2000;
+						 skewxin: 60;"
+
+				style={{top: 450,
+						left: 125,
+						fontSize: 30,
+						color: '#FF3D00'}}
+
+			>When medical treatment is fun :)</h5>
 
 			{/* 75-79, 81, 82, 86, 87-89, 93-95, 111, 103-105, 109, 112
 			3d: 19, 20, 22, 23, 26, 62 63, 68, 69, 76 */}
