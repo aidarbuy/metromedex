@@ -55,6 +55,7 @@ export default ({ isDrawerOpen, setRoute, toggleDrawer, menuItems, menuItemColor
 
 		{/*<Subheader>Site menu</Subheader>
 		<Divider/>*/}
+		<div style={{paddingTop:10}}></div>
 
 		{menuItems.map((item, i) => (
 			<MenuItem key={i}

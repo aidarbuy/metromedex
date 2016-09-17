@@ -20,7 +20,7 @@ class Doctors extends React.Component {
 			<section>
 				<Helmet title="Doctors - Metromed UC"/>
 
-				<h3 style={{color:primary3Color}}>Doctors</h3>
+				{/*<h3 style={{color:primary3Color}}>Doctors</h3>*/}
 
 				<div className="flex-container">
 					{dataDoctors.map((doctor, i) => (

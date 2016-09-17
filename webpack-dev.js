@@ -29,7 +29,7 @@ module.exports = {
 		hot: true, // Live-reload
 		inline: true,
 		port: 3000, // Port Number
-		host: 'localhost', // Change to '0.0.0.0' for external facing server
+		host: '0.0.0.0', // Change to '0.0.0.0' for external facing server
 		historyApiFallback: true,
 	},
 

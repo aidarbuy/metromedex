@@ -104,7 +104,7 @@ class Layout extends React.Component {
 		}
 		if (!isThemeDark) isThemeDark = true;
 		if (!isAppbarFixed) isAppbarFixed = true;
-		const isThemeDarkBoolean = isThemeDark === "true" ? true : false;
+		const isThemeDarkBoolean = isThemeDark === "true";
 		this.setState({
 			isAppbarFixed: isAppbarFixed,
 			isPopoverOpen: false,
@@ -131,13 +131,9 @@ class Layout extends React.Component {
 		this.setState({route:value});
 	}
 
-	pushToRouter(route) {
-		this.context.router.push(route);
-	}
+	pushToRouter(route) { this.context.router.push(route) }
 
-	setMainState(prop) {
-		this.setState(prop);
-	}
+	setMainState(prop) { this.setState(prop) }
 
 	setRoute(route) {
 		this.pushToRouter(route);
@@ -166,28 +162,18 @@ class Layout extends React.Component {
 		localStorage.setItem('isAppbarFixed', this.state.isAppbarFixed);
 	}
 
-	toggleDrawer() {
-		this.setState({ isDrawerOpen: !this.state.isDrawerOpen });
-	}
+	toggleDrawer() { this.setState({ isDrawerOpen: !this.state.isDrawerOpen }) }
 
 	render() {
-		const {
-			initialSelectedIndex,
-			footerMenuValue,
-			isAppbarFixed,
-			isDrawerOpen,
-			isThemeDark,
-			language,
-			muiTheme,
-			route
-		} = this.state;
+		const { footerMenuValue, isAppbarFixed, isThemeDark, language, muiTheme, route } = this.state;
 
-		const { 
-			accent1Color, accent2Color, accent3Color, alternateTextColor,
-			borderColor, canvasColor, pickerHeaderColor,
-			primary1Color, primary2Color, primary3Color,
-			textColor, shadowColor,
-		} = muiTheme.palette;
+		var title = route.slice(1, 2).toUpperCase() + route.slice(2);
+		if (route === "/")        { title = "Metromed UC"   }
+		if (route === "/about")   { title = "About Us"  }
+		if (route === "/virtual") { title = "Virtual Tour"  }
+		if (route === "/gallery") { title = "Photo Gallery" }
+
+		const { accent2Color, alternateTextColor, canvasColor, primary1Color, primary2Color, primary3Color, textColor, shadowColor } = muiTheme.palette;
 
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}>
@@ -198,10 +184,10 @@ class Layout extends React.Component {
 						isAppbarFixed={isAppbarFixed}
 						isThemeDark={isThemeDark}
 						language={language}
-						pushToRouter 			= { this.pushToRouter }
+						title={title}
+            titleColor={alternateTextColor}
 						setTheme 		  		= { this.setTheme }
 						switchLanguage 	  = { this.switchLanguage }
-						titleColor 			  = { alternateTextColor }
 						toggleAppbarFixed = { this.toggleAppbarFixed }
 						toggleDrawer   	  = { this.toggleDrawer }
 						toggleTheme    	  = { this.toggleTheme }

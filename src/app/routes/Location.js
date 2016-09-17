@@ -1,8 +1,6 @@
-import { Card, CardActions, CardHeader, CardMedia, CardText, CardTitle } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import { Card, CardActions, CardHeader, CardMedia, CardTitle } from 'material-ui/Card';
 import GMaps from '../components/maps/GoogleMaps';
 import Helmet from 'react-helmet';
-import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import PhonelinkRing from 'material-ui/svg-icons/communication/phonelink-ring';
@@ -23,67 +21,30 @@ class Location extends React.Component {
 		const email = "info@metromeduc.com";
 		const loungeSrc = 'https://firebasestorage.googleapis.com/v0/b/metromeduc.appspot.com/o/images%2Finterior%2Flounge-1200x600.jpg?alt=media&token=7d9226dc-645f-47bf-801d-2a2ecf875294';
 		const text = "Clean and pleasant place";
-		const text2 = "We are right next to Wal-Mart.";
+		const text2 = "We are right next to Wal-Mart";
 		const title = "Contacts and Location";
 
 		return (
 			<section>
 				<Helmet title="Contacts and Location - Metromed UC"/>
 
-				<h3 style={{color:primary3Color}}>{title}</h3>
+				<h4 style={{color:primary3Color}}>{title}</h4>
 
 				<div className="flex-container" style={{marginTop:-30}}>
+
 					<div className="flex-item-half">
 						<Card>
 							<CardHeader
-								title = {
-									<a
-										href = { "tel:" + phone }
-										style = {{ 
-											color: accent1Color,
-											fontSize: 18,
-									}}>{phone}</a>
-								}
-
-								subtitle = {
-									<a
-										href = { "mailto:" + email }
-										style = {{ 
-											color: primary2Color,
-											fontSize: 16,
-									}}>{email}</a>
-								}
-
-								avatar = {
-									<PhonelinkRing style = {{
-										fill: primary3Color,
-										marginTop: 12,
-										marginLeft: 10,
-									}}/>
-								}
+								title={<a href={"tel:" + phone} style={{color:accent1Color, fontSize:18}}>{phone}</a>}
+								subtitle = {<a href={"mailto:" + email} style={{color:primary2Color, fontSize:16}}>{email}</a>}
+								avatar={<PhonelinkRing style={{fill:primary3Color, marginTop:12, marginLeft:10}}/>}
 							/>
-
-							<CardMedia
-								overlay={
-									<CardTitle
-										title = { text }
-									/>
-								}
-							>
+							<CardMedia overlay={<CardTitle title={text}/>}>
 								<img src={require('../images/doctors/lounge-820x465.jpg')} />
 							</CardMedia>
-
 							<CardActions style={{textAlign:'center'}}>
-								<RaisedButton
-									href = { "tel:" + phone }
-									label = "Call Us"
-									secondary = { true }
-								/>
-								<RaisedButton
-									href = { "mailto:" + email }
-									label = "Email Us"
-									primary = { true }
-								/>
+								<RaisedButton href={"tel:" + phone} label="Call Us" secondary={true}/>
+								<RaisedButton href={"mailto:" + email} label="Email Us" primary={true}/>
 							</CardActions>
 						</Card>
 					</div>
@@ -91,50 +52,14 @@ class Location extends React.Component {
 					<div className="flex-item-half">
 						<Card>
 							<CardHeader
-								title = {
-									<a
-										href = { location }
-										style = {{ 
-											color: accent1Color,
-											fontSize: 18,
-									}}>{address}</a>
-								}
-
-								subtitle = {
-									<a
-										href = { leesburg }
-										style = {{ 
-											color: primary2Color,
-											fontSize: 16,
-									}}>{city}</a>
-								}
-
-								avatar = {
-									<MapsPlace
-										color = { primary3Color }
-										style = {{
-											marginTop: 12,
-											marginLeft: 10,
-											width: 30,
-											height: 30,
-									}}/>
-								}
-							/>
-
-							<CardMedia overlay={<CardTitle title = { text2 } />}>
-								<GMaps/>
-							</CardMedia>
-
-							{/*
-							<CardText><GMaps/></CardText>
-							*/}
-
+								title={<a href={location} style={{color:accent1Color, fontSize:18}}>{address}</a>}
+								subtitle={<a href={leesburg} style={{color:primary2Color, fontSize:16}}>{city}</a>}
+								avatar = {<MapsPlace color={primary3Color} style={{marginTop:12, marginLeft:10, width:30, height:30}}/>}
+              />
+							<CardMedia><GMaps/></CardMedia>
+							<CardMedia overlay={<CardTitle title={text2}/>}/>
 							<CardActions style={{textAlign:'center'}}>
-								<RaisedButton
-									href = { location }
-									label = "Open in Google Maps"
-									primary = { true }
-								/>
+								<RaisedButton href={location} label="Open in Google Maps" primary={true}/>
 							</CardActions>
 						</Card>
 					</div>

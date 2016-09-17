@@ -44,7 +44,7 @@ class Articles extends Component {
 			<section>
 				<Helmet title="Articles - MetromedUC" />
 
-				<h3 style={{ color:primary3Color }}>Articles</h3>
+				{/*<h3 style={{ color:primary3Color }}>Articles</h3>*/}
 
 				<div className="flex-container" style={{ marginTop:20 }}>
 					{content}

@@ -18,7 +18,7 @@ class Services extends React.Component {
 			<section>
 				<Helmet title="Services - Metromed UC"/>
 
-				<h3 style={{color:primary3Color}}>Services</h3>
+				{/*<h3 style={{color:primary3Color}}>Services</h3>*/}
 
 				<div className="flex-container">
 					{services.map((service, i) => (

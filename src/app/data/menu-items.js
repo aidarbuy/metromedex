@@ -33,7 +33,7 @@ const getMenuItems = (iconColor) => {
 		icon: <LocationIcon style={{fill:iconColor}} />,
 		route: '/location',
 	},{
-		name: "Virtual",
+		name: "Virtual Tour",
 		icon: <VirtualIcon style={{fill:iconColor}} />,
 		route: '/virtual',
 	}];

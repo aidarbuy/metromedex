@@ -40,15 +40,11 @@ class Gallery extends Component {
 			<section>
 				<Helmet title="Photo gallery"/>
 
-				<h3 style={{color:primary3Color}}>Photo Gallery</h3>
+				{/*<h3 style={{color:primary3Color}}>Photo Gallery</h3>*/}
 
 				<div id="nanoGallery">
 					{dataGallery.map((photo, index) => (
-						<a key={index}
-							href 		 = { photo.image }
-							data-ngthumb = { photo.thumb }
-							data-ngdesc  = { photo.desc }
-						>
+						<a key={index} href={photo.image} data-ngthumb={photo.thumb} data-ngdesc={photo.desc}>
 							{photo.title}
 						</a>
 					))}
@@ -58,8 +54,6 @@ class Gallery extends Component {
 	}
 }
 
-Gallery.contextTypes = {
-	muiTheme: PropTypes.object,
-};
+Gallery.contextTypes = { muiTheme: PropTypes.object };
 
 export default Gallery;
