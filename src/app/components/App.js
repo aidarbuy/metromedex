@@ -1,5 +1,5 @@
 import React from 'react';
-import { fade } from 'material-ui/utils/colorManipulator';
+// import { fade } from 'material-ui/utils/colorManipulator';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
@@ -11,7 +11,6 @@ import { getMenuItems } from '../data/menu-items';
 
 import AppBar from './layout/AppBar';
 import AppTabs from './layout/AppTabs';
-import Home from '../routes/Home';
 import Drawer from'./layout/Drawer';
 import Footer from './layout/Footer';
 
@@ -20,22 +19,14 @@ require('../styles/layout.scss');
 require('../styles/typography.scss');
 
 import {
-	blue50, blue100, blue200, blue500, blue700, blue800, blue900,
-	blueGrey500, blueGrey700, blueGrey900,
-	cyan500, cyan700, cyan900, cyanA400, cyanA700,
-	green50, green100, green200, green300, green400, green500, green700, green900, greenA400,
-	grey50, grey100, grey200, grey300, grey400, grey500, grey600, grey700, grey800, grey900,
-	orange500, orangeA700,
-	pink100, pink300, pink500, pink700, pink800, pink900,
-	purple700, purple900,
-	red500, red700,
-	teal500, teal900,
-	yellow500, yellow800,
+	blue50, blue500, blue700, blue800, blue900,
+	grey50, grey200, grey400, grey600, grey700, grey900,
+	pink100, pink500, pink800, pink900,
+	yellow500,
 } from 'material-ui/styles/colors';
 
 
 // Dark palette
-const defaultColor = grey700;
 darkBaseTheme.palette.primary1Color = blue900;
 darkBaseTheme.palette.primary2Color = blue800;
 darkBaseTheme.palette.primary3Color = blue500;
